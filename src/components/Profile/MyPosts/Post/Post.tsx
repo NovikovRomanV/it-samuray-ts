@@ -4,6 +4,7 @@ import s from "./Post.module.css"
 type PropsType = {
     message: string
     likesCount: number
+    id: number
 }
 
 const Post = (props: PropsType) => {
