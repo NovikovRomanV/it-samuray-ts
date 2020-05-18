@@ -2,21 +2,13 @@ import React from "react";
 import s from "./Dialogs.module.css";
 import DialogsItems from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import {PropsArrayType} from "./../../App";
 
-type DialogsType = {
-    name: string
-    id: number
-}
 
-type MessageType = {
-    message: string
-    id: number
-}
-
-type PropsArrayType = {
-    messages: Array<MessageType>
-    dialogs: Array<DialogsType>
-}
+// type PropsArrayType = {
+//     messages: Array<MessageType>
+//     dialogs: Array<DialogsType>
+// }
 
 const Dialogs = (props: PropsArrayType) => {
 

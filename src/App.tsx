@@ -26,7 +26,7 @@ type MessageType = {
     id: number
 }
 
-type PropsArrayType = {
+export type PropsArrayType = {
     posts: Array<PropsType>
     dialogs: Array<DialogsType>
     messages: Array<MessageType>
