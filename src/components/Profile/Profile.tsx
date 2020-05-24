@@ -2,27 +2,14 @@ import React from 'react';
 import s from "./Profile.module.css"
 import MyPosts from "./MyPosts/MyPosts"
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-
-type PropsType = {
-    message: string
-    likesCount: number
-    id: number
-}
-
-type PropsArrayType = {
-    posts: Array<PropsType>
-}
-
+import {PropsArrayType} from "../../App";
 
 
 const Profile = (props: PropsArrayType) => {
-
-
-
     return (
         <div className={s.content}>
             <ProfileInfo />
-            <MyPosts posts={props.posts}/>
+            <MyPosts posts={props.posts} dialogs={props.dialogs} messages={props.messages}/>
         </div>
     )
 };

@@ -10,18 +10,18 @@ import News from "./components/ News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
-type PropsType = {
+export type PropsType = {
     message: string
     likesCount: number
     id: number
 }
 
-type DialogsType = {
+export type DialogsType = {
     name: string
     id: number
 }
 
-type MessageType = {
+export type MessageType = {
     message: string
     id: number
 }
@@ -32,6 +32,11 @@ export type PropsArrayType = {
     messages: Array<MessageType>
 }
 
+export type PropsArrayDialigsType = {
+    messages: Array<MessageType>
+    dialogs: Array<DialogsType>
+}
+
 function App(props: PropsArrayType) {
 
     return (
@@ -40,7 +45,9 @@ function App(props: PropsArrayType) {
                 <Header/>
                 <Navbar/>
                 <div className="app-wrapper-content">
-                    <Route path="/profile" render={() => <Profile posts={props.posts}/>}/>
+                    <Route path="/profile" render={() => <Profile posts={props.posts}
+                                                                  messages={props.messages}
+                                                                  dialogs={props.dialogs}/>}/>
                     <Route path="/dialogs" render={() => <Dialogs dialogs={props.dialogs}
                                                                   messages={props.messages}/>}/>
                     <Route path="/news" component={News}/>
