@@ -14,32 +14,31 @@ export type PostType = {
     id: number
 }
 
-export type PropfilePageType = {
+export type ProfilePageType = {
     posts: Array<PostType>
 }
 
-export type DialigsPageType = {
+export type DialogsPageType = {
     messages: Array<MessageType>
     dialogs: Array<DialogType>
 }
 
 export type AppState = {
-    propfilePage: PropfilePageType
-    dialogsPage: DialigsPageType
+    profilePage: ProfilePageType
+    dialogsPage: DialogsPageType
 }
 
-export type PropfilePagePropsType = {
-    propfilePage: PropfilePageType
+export type ProfilePagePropsType = {
+    profilePage: ProfilePageType
 }
 
 
 let state = {
-    propfilePage: {
+    profilePage: {
         posts: [
             {id: 1, message: "Hi, how are you?", likesCount: 15},
             {id: 2, message: "It's my first post.", likesCount: 20}
         ]
-
     },
     dialogsPage: {
         messages: [
@@ -54,10 +53,16 @@ let state = {
             {id: 4, name: "Alex"},
             {id: 5, name: "Lex"}
         ],
+    },
+    sidebar: {
+        friends: [
+            {id: 1, name: "Dimych"},
+            {id: 2, name: "Vas"},
+            {id: 3, name: "Bobs"}
+        ]
     }
-
 };
 
-//export type AppState = typeof state;
+
 
 export default state

@@ -6,10 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import state from "./redux/state";
 
 
+
 ReactDOM.render(
   <React.StrictMode>
 
-    <App appstate={state}/>
+    <App state={state}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

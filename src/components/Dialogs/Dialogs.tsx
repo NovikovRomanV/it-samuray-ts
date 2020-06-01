@@ -2,9 +2,6 @@ import React from "react";
 import s from "./Dialogs.module.css";
 import DialogsItems from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {DialigsPageType} from "../../redux/state";
-
-
 
 const Dialogs = (props: any) => {
 

@@ -1,4 +1,4 @@
-import React, {DataHTMLAttributes} from 'react';
+import React from 'react';
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -11,35 +11,25 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import {AppState} from "./redux/state";
 
-
-
 type AppStateType = {
-
-   appstate: AppState
-
+   state: AppState
 }
 
-
-
-
-
-
-
-
 function App(props: AppStateType) {
-debugger
+
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Navbar/>
                 <div className="app-wrapper-content">
-                    <Route path="/profile" render={() => <Profile propfilePage={props.appstate.propfilePage}/>}/>
-                    <Route path="/dialogs" render={() => <Dialogs dialogs={props.appstate.dialogsPage.dialogs}
-                                                                  messages={props.appstate.dialogsPage.messages}/>}/>
+                    <Route path="/profile" render={() => <Profile profilePage={props.state.profilePage}/>}/>
+                    <Route path="/dialogs" render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs}
+                                                                  messages={props.state.dialogsPage.messages}/>}/>
                     <Route path="/news" component={News}/>
                     <Route path="/music" component={Music}/>
                     <Route path="/settings" component={Settings}/>
+
                 </div>
             </div>
         </BrowserRouter>

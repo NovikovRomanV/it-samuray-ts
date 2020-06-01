@@ -6,8 +6,7 @@ import {PostType} from "../../../../redux/state";
 const Post = (props: PostType) => {
     return (
         <div className={s.item}>
-            <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTK0rm_Nux8s1WoxU7TvaHcE-eN_nO8_Oa8xXXrH8iArmFhBblK&usqp=CAU"/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTK0rm_Nux8s1WoxU7TvaHcE-eN_nO8_Oa8xXXrH8iArmFhBblK&usqp=CAU"/>
             {props.message}
             <div>
                 <span>like:</span>
