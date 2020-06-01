@@ -9,20 +9,27 @@ import {BrowserRouter} from "react-router-dom";
 import News from "./components/ News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import {AppState} from "./redux/state";
 
+type AppStateType = {
+   state: AppState
+}
 
-function App() {
+function App(props: AppStateType) {
+
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Navbar/>
                 <div className="app-wrapper-content">
-                    <Route path="/profile" component={Profile}/>
-                    <Route path="/dialogs" component={Dialogs}/>
+                    <Route path="/profile" render={() => <Profile profilePage={props.state.profilePage}/>}/>
+                    <Route path="/dialogs" render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs}
+                                                                  messages={props.state.dialogsPage.messages}/>}/>
                     <Route path="/news" component={News}/>
                     <Route path="/music" component={Music}/>
                     <Route path="/settings" component={Settings}/>
+
                 </div>
             </div>
         </BrowserRouter>
